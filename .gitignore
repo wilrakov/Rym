@@ -1,2 +1,5 @@
 main
 main.o
+src/main
+src/main.o
+src/example.rym

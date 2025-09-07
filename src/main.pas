@@ -1,9 +1,19 @@
 program rym;
 
 var
-  age: integer;
+  path, ligne: string;
+  src: TextFile;
 
 begin
-  age:=56;
-  writeln('Hello World, vous avez ', age, ' ans.');
+  if paramCount < 1 then halt;
+
+  path := paramStr(1);
+  assign(src, path);
+  reset(src);
+  while not eof(src) do
+  begin
+    readln(src, ligne);
+    writeln(ligne);
+  end;
+  close(src);
 end.
