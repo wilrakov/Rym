@@ -1,5 +1,12 @@
 program rym;
 
+type
+  TokenType = (IDENTIFIER, T_ASSIGN, NUMBER, OPERATOR, SEMICOLON, T_EOF);
+  token = record
+    tType: TokenType;
+    value: string;
+  end;
+
 var
   path, ligne: string;
   src: TextFile;
